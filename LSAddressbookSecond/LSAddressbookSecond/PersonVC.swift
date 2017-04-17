@@ -16,6 +16,7 @@ class PersonVC: UITableViewController {
     
     
     var person: Person?
+    var completionCallBack:(()->())?
 
     override func viewDidLoad() {
         super.viewDidLoad()
@@ -25,4 +26,13 @@ class PersonVC: UITableViewController {
         addressText.text = person?.address
 
     }
+    
+    @IBAction func savePerson(_ sender: Any) {
+        self.navigationController?.popViewController(animated: true)
+        person?.name = nameText.text
+        person?.phone = photoText.text
+        person?.address = addressText.text
+        completionCallBack?()
+    }
+    
 }

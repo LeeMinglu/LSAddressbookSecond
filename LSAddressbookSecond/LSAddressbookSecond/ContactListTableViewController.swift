@@ -55,6 +55,10 @@ class ContactListTableViewController: UITableViewController {
 //        vc.person = self.personList[indexPath.row]
         if let indexPath = sender as? IndexPath {
             vc.person = self.personList[indexPath.row]
+            
+            vc.completionCallBack = {
+                self.tableView.reloadRows(at: [indexPath], with: .automatic)
+            }
         }
     }
     
@@ -67,9 +71,9 @@ class ContactListTableViewController: UITableViewController {
             var personList:[Person] = []
             for i in 1...20 {
                 let person = Person()
-                person.name = "rock+\(i)"
+                person.name = "rock - \(i)"
                 person.phone = "186" + String(format: "\(arc4random_uniform(100000)))")
-                person.address = "beijing" + String(format: "\(arc4random_uniform(100000)))")
+                person.address = "beijing" + String(format: "\(arc4random_uniform(100000))")
                 personList.append(person)
                 
                 DispatchQueue.main.async {

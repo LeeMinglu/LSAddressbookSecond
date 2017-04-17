@@ -141,7 +141,13 @@
                             <outlet property="delegate" destination="Md1-H7-yj4" id="3Uf-4a-776"/>
                         </connections>
                     </tableView>
-                    <navigationItem key="navigationItem" title="联系人" id="AQb-eV-xPV"/>
+                    <navigationItem key="navigationItem" title="联系人" id="AQb-eV-xPV">
+                        <barButtonItem key="rightBarButtonItem" title="保存" id="Qi7-mS-L7i">
+                            <connections>
+                                <action selector="savePerson:" destination="Md1-H7-yj4" id="Hi8-SB-vAf"/>
+                            </connections>
+                        </barButtonItem>
+                    </navigationItem>
                     <connections>
                         <outlet property="addressText" destination="Gxo-1t-leL" id="F08-b3-O9B"/>
                         <outlet property="nameText" destination="Qwd-BL-nou" id="svV-jk-6gn"/>
