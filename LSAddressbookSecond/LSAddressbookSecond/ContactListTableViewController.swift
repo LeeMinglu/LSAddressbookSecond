@@ -51,8 +51,11 @@ class ContactListTableViewController: UITableViewController {
     
     override func prepare(for segue: UIStoryboardSegue, sender: Any?) {
         let vc = segue.destination as! PersonVC
-        let indexPath = sender as! IndexPath
-        vc.person = self.personList[indexPath.row]
+//        let indexPath = sender as! IndexPath
+//        vc.person = self.personList[indexPath.row]
+        if let indexPath = sender as? IndexPath {
+            vc.person = self.personList[indexPath.row]
+        }
     }
     
     
