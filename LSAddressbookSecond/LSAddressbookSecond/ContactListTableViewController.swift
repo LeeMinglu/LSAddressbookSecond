@@ -20,6 +20,9 @@ class ContactListTableViewController: UITableViewController {
         }
         
     }
+    @IBAction func addPerson(_ sender: Any) {
+        performSegue(withIdentifier: "list2Person", sender: nil)
+    }
 
     override func didReceiveMemoryWarning() {
         super.didReceiveMemoryWarning()
