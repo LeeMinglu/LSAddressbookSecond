@@ -62,6 +62,15 @@ class ContactListTableViewController: UITableViewController {
             vc.completionCallBack = {
                 self.tableView.reloadRows(at: [indexPath], with: .automatic)
             }
+        }else {
+            //防止循环引用 
+            vc.completionCallBack = { [weak vc] in
+                guard let person = vc?.person else {
+                    return
+                }
+                self.personList.insert(person, at: 0)
+                self.tableView.reloadData()
+            }
         }
     }
     

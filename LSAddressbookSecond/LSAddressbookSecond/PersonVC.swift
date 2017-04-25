@@ -29,6 +29,9 @@ class PersonVC: UITableViewController {
     
     @IBAction func savePerson(_ sender: Any) {
         self.navigationController?.popViewController(animated: true)
+        if person == nil {
+            person = Person()
+        }
         person?.name = nameText.text
         person?.phone = photoText.text
         person?.address = addressText.text
